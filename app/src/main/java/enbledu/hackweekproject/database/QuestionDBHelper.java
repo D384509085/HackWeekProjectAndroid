@@ -18,7 +18,7 @@ public class QuestionDBHelper extends SQLiteOpenHelper {
             "question text)";
     private static final String SQL_DROP = "drop table if exists question_info";
 
-    public DBHelper(Context context) {
+    public QuestionDBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
     }
 
