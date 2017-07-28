@@ -15,6 +15,9 @@ public class QuestionEntity {
         this.question = question;
     }
 
+    public QuestionEntity() {
+
+    }
     public boolean isHasAnswer() {
         return hasAnswer;
     }

@@ -14,6 +14,7 @@ public class RobotDBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "question.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table robot_info(_id integer primary key autoincrement," +
+            "name text" +
             "qqid integer," +
             "character integer" +
             "stopSpeakingNum integer" +

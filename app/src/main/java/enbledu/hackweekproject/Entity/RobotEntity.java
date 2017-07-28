@@ -8,11 +8,16 @@ public class RobotEntity {
 
 
     //qq号不在构造方法中获取，在传递给服务器数据后返回客户端额外设置
+    private String name;
     private int qqID;
     //性格常量在CharacterDetail里
     private int character;
     private int stopSpeakingNum;
     private boolean isSpeakAuto;
+
+    public RobotEntity() {
+
+    }
 
     public RobotEntity(int character, int stopSpeakingNum, boolean isSpeakAoto) {
         this.character = character;
@@ -28,7 +33,7 @@ public class RobotEntity {
         return stopSpeakingNum;
     }
 
-    public boolean isSpeakAoto() {
+    public boolean isSpeakAuto() {
         return isSpeakAuto;
     }
 
@@ -36,14 +41,21 @@ public class RobotEntity {
         this.character = character;
     }
 
+    public void setSpeakAuto(boolean speakAuto) {
+        isSpeakAuto = speakAuto;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void setStopSpeakingNum(int stopSpeakingNum) {
         this.stopSpeakingNum = stopSpeakingNum;
     }
-
-    public void setSpeakAoto(boolean speakAoto) {
-        isSpeakAuto = speakAoto;
-    }
-
     public int getQqID() {
         return qqID;
     }
