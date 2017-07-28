@@ -10,7 +10,8 @@ public class RobotEntity {
     public static int CHARACTER_BAIDU = 1;
     public static int CHARACTER_MOLI = 2;
 
-
+    //qq号不在构造方法中获取，在传递给服务器数据后返回客户端额外设置
+    private int qqID;
     private int character;
     private int stopSpeakingNum;
     private boolean isSpeakAoto;
@@ -43,5 +44,13 @@ public class RobotEntity {
 
     public void setSpeakAoto(boolean speakAoto) {
         isSpeakAoto = speakAoto;
+    }
+
+    public int getQqID() {
+        return qqID;
+    }
+
+    public void setQqID(int qqID) {
+        this.qqID = qqID;
     }
 }
