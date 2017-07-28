@@ -5,13 +5,11 @@ package enbledu.hackweekproject.Entity;
  */
 
 public class RobotEntity {
-    //性格常量
-    public static int CHARACTER_TULING = 0;
-    public static int CHARACTER_BAIDU = 1;
-    public static int CHARACTER_MOLI = 2;
+
 
     //qq号不在构造方法中获取，在传递给服务器数据后返回客户端额外设置
     private int qqID;
+    //性格常量在CharacterDetail里
     private int character;
     private int stopSpeakingNum;
     private boolean isSpeakAoto;
