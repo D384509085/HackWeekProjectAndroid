@@ -5,15 +5,17 @@ package enbledu.hackweekproject.Entity;
  */
 
 public class QuestionEntity {
-    public boolean hasAnswer;
-    public String answer;
+    private boolean hasAnswer;
+    private String answer;
+    private String question;
 
-    public QuestionEntity(boolean hasAnser, String answer) {
+    public QuestionEntity(boolean hasAnser, String answer, String question) {
         this.hasAnswer = hasAnser;
         this.answer = answer;
+        this.question = question;
     }
 
-    public boolean isHasAnser() {
+    public boolean isHasAnswer() {
         return hasAnswer;
     }
 
@@ -27,5 +29,13 @@ public class QuestionEntity {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
     }
 }

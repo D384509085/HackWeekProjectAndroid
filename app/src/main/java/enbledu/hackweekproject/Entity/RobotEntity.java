@@ -12,12 +12,12 @@ public class RobotEntity {
     //性格常量在CharacterDetail里
     private int character;
     private int stopSpeakingNum;
-    private boolean isSpeakAoto;
+    private boolean isSpeakAuto;
 
     public RobotEntity(int character, int stopSpeakingNum, boolean isSpeakAoto) {
         this.character = character;
         this.stopSpeakingNum = stopSpeakingNum;
-        this.isSpeakAoto = isSpeakAoto;
+        this.isSpeakAuto = isSpeakAoto;
     }
 
     public int getCharacter() {
@@ -29,7 +29,7 @@ public class RobotEntity {
     }
 
     public boolean isSpeakAoto() {
-        return isSpeakAoto;
+        return isSpeakAuto;
     }
 
     public void setCharacter(int character) {
@@ -41,7 +41,7 @@ public class RobotEntity {
     }
 
     public void setSpeakAoto(boolean speakAoto) {
-        isSpeakAoto = speakAoto;
+        isSpeakAuto = speakAoto;
     }
 
     public int getQqID() {
