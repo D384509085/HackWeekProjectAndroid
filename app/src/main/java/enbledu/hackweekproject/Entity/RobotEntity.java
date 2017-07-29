@@ -19,7 +19,17 @@ public class RobotEntity {
 
     }
 
-    public RobotEntity(int character, int stopSpeakingNum, boolean isSpeakAoto) {
+    public RobotEntity(String name,int qqID,int character, int stopSpeakingNum, boolean isSpeakAoto) {
+        this.qqID = qqID;
+        this.name = name;
+        this.character = character;
+        this.stopSpeakingNum = stopSpeakingNum;
+        this.isSpeakAuto = isSpeakAoto;
+    }
+    //不含qq号的构造方法
+    public RobotEntity(String name,int character, int stopSpeakingNum, boolean isSpeakAoto) {
+
+        this.name = name;
         this.character = character;
         this.stopSpeakingNum = stopSpeakingNum;
         this.isSpeakAuto = isSpeakAoto;
