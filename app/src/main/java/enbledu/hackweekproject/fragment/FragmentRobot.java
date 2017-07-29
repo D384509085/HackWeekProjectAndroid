@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import enbledu.hackweekproject.Entity.RobotEntity;
 import enbledu.hackweekproject.R;
 
 /**
@@ -17,6 +18,7 @@ import enbledu.hackweekproject.R;
 public class FragmentRobot extends Fragment {
 
     Context mContext;
+    RobotEntity mRobotEntity;
     View mView;
     @Nullable
     @Override
@@ -25,7 +27,9 @@ public class FragmentRobot extends Fragment {
         return mView;
     }
 
-    public FragmentRobot(Context context) {
+    public FragmentRobot(Context context, RobotEntity robotEntity) {
         this.mContext = context;
+        this.mRobotEntity = robotEntity;
+
     }
 }

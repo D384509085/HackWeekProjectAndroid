@@ -15,7 +15,6 @@ import enbledu.hackweekproject.Entity.RobotEntity;
 
 public class RobotDAOImpl implements RobotDAO{
 
-    private static final String TAG = "NoteDAOImpl";
     private RobotDBHelper mHelper;
 
     public RobotDAOImpl(Context context) {

@@ -3,6 +3,7 @@ package enbledu.hackweekproject.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Administrator on 2017/7/28 0028.
@@ -10,8 +11,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class RobotDBHelper extends SQLiteOpenHelper {
 
+    private static final String TAG = "RobotDBHelper";
     private static RobotDBHelper sHelper = null;
-    private static final String DB_NAME = "question.db";
+    private static final String DB_NAME = "robot.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table robot_info(_id integer primary key autoincrement," +
             "name text" +
@@ -38,6 +40,7 @@ public class RobotDBHelper extends SQLiteOpenHelper {
     public static RobotDBHelper getInstance(Context context) {
         if (sHelper == null) {
             sHelper = new RobotDBHelper(context);
+            Log.d(TAG,"create");
         }
         return sHelper;
     }
