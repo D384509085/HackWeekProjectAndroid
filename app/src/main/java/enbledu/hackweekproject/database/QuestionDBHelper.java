@@ -14,9 +14,11 @@ public class QuestionDBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "question.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table question_info(_id integer primary key autoincrement," +
-            "question text" +
-            "hasAnswer integer," +
-            "answer text)";
+            "answer text" +
+            "question1 text," +
+            "question2 text" +
+            "question3 text" +
+            "questionNumber integer)";
     private static final String SQL_DROP = "drop table if exists question_info";
 
     public QuestionDBHelper(Context context) {

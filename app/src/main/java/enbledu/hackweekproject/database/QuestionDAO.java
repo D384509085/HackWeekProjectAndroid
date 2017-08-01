@@ -11,9 +11,11 @@ import enbledu.hackweekproject.Entity.QuestionEntity;
 public interface QuestionDAO {
     public void insertQuestion(QuestionEntity questionEntity);
 
-    public void deleteQuestion(QuestionEntity questionEntity);
+    public void deleteQuestion(int questionNumber);
 
     public void updateQuestion(QuestionEntity questionEntity);
 
     public ArrayList<QuestionEntity> getQuestion();
+
+    public int getQuestionNum();
 }

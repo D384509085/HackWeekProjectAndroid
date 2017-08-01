@@ -15,7 +15,7 @@ import enbledu.hackweekproject.Entity.QuestionEntity;
 
 public class QuestionDAOImpl implements QuestionDAO {
 
-    private static final String TAG = "NoteDAOImpl";
+
     private QuestionDBHelper mHelper;
 
     public QuestionDAOImpl(Context context) {
@@ -25,26 +25,22 @@ public class QuestionDAOImpl implements QuestionDAO {
     @Override
     public void insertQuestion(QuestionEntity questionEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
-        int hasAnswer;
-        if (questionEntity.isHasAnswer()) {
-            hasAnswer = 1;
-        } else {
-            hasAnswer = 0;
-        }
-        db.execSQL("insert into note_info(question,hasAnswer,answer) values(?,?,?)",
-                new Object[]{questionEntity.getQuestion(),
-                        hasAnswer,
-                        questionEntity.getAnswer()
+        db.execSQL("insert into note_info(answer,question1,question2,question3, questionNumber) values(?,?,?,?,?)",
+                new Object[]{questionEntity.getAnswer(),
+                        questionEntity.getQuestion1(),
+                        questionEntity.getQuestion2(),
+                        questionEntity.getQuestion3(),
+                        questionEntity.getQuestionNumber()
                 });
         db.close();
     }
 
 
     @Override
-    public void deleteQuestion(QuestionEntity questionEntity) {
+    public void deleteQuestion(int questionNumber) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
-        db.execSQL("delete from note_info where question = ?",
-                new String[]{questionEntity.getQuestion()});
+        db.execSQL("delete from question_info where questionNumber = ?",
+                new Integer[]{questionNumber});
 
         db.close();
     }
@@ -53,14 +49,11 @@ public class QuestionDAOImpl implements QuestionDAO {
     public void updateQuestion(QuestionEntity questionEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues edit_values = new ContentValues();
-        edit_values.put("question", questionEntity.getQuestion());
-        if (questionEntity.isHasAnswer()) {
-            edit_values.put("hasAnswer", 1);
-        } else {
-            edit_values.put("hasAnswer", 0);
-        }
         edit_values.put("answer", questionEntity.getAnswer());
-        db.update("question_info", edit_values, "question = ?", new String[]{questionEntity.getQuestion()});
+        edit_values.put("question1", questionEntity.getQuestion1());
+        edit_values.put("question2", questionEntity.getQuestion2());
+        edit_values.put("question3", questionEntity.getQuestion3());
+        db.update("question_info", edit_values, "questionNumber = ?", (String[]) new Object[]{questionEntity.getQuestionNumber()});
         db.close();
     }
 
@@ -74,13 +67,31 @@ public class QuestionDAOImpl implements QuestionDAO {
         cursor = db.query("note_info", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
             QuestionEntity questionEntity = new QuestionEntity();
-            questionEntity.setQuestion(cursor.getString(cursor.getColumnIndex("question")));
-            questionEntity.setHasAnser(1 == cursor.getInt(cursor.getColumnIndex("hasAnswer")));
             questionEntity.setAnswer(cursor.getString(cursor.getColumnIndex("answer")));
+            questionEntity.setQuestion1(cursor.getString(cursor.getColumnIndex("question1")));
+            questionEntity.setQuestion2(cursor.getString(cursor.getColumnIndex("question2")));
+            questionEntity.setQuestion3(cursor.getString(cursor.getColumnIndex("question3")));
+            questionEntity.setQuestionNumber(cursor.getInt(cursor.getColumnIndex("questionNumber")));
             list.add(questionEntity);
         }
         cursor.close();
         db.close();
         return list;
+    }
+
+    @Override
+    public int getQuestionNum() {
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+        int num = 0;
+        /*Cursor cursor = db.rawQuery("select * from thread_info where url = ?",
+                 new String[]{url});*/
+        Cursor cursor;
+        cursor = db.query("note_info", null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            num++;
+        }
+        cursor.close();
+        db.close();
+        return num;
     }
 }

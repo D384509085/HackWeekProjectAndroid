@@ -5,40 +5,60 @@ package enbledu.hackweekproject.Entity;
  */
 
 public class QuestionEntity {
-    private boolean hasAnswer;
     private String answer;
-    private String question;
+    private String question1;
+    private String question2;
+    private String question3;
+    private int questionNumber;
 
-    public QuestionEntity(boolean hasAnser, String answer, String question) {
-        this.hasAnswer = hasAnser;
+    public QuestionEntity(String answer, String question1, String question2, String question3,int questionNumber) {
         this.answer = answer;
-        this.question = question;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.question3 = question3;
+        this.questionNumber = questionNumber;
     }
 
     public QuestionEntity() {
-
-    }
-    public boolean isHasAnswer() {
-        return hasAnswer;
     }
 
-    public String getAnswer() {
-        return answer;
+    public void setQuestionNumber(int questionNumber) {
+        this.questionNumber = questionNumber;
     }
 
-    public void setHasAnser(boolean hasAnser) {
-        this.hasAnswer = hasAnser;
+    public int getQuestionNumber() {
+        return questionNumber;
     }
 
     public void setAnswer(String answer) {
         this.answer = answer;
     }
 
-    public String getQuestion() {
-        return question;
+    public void setQuestion1(String question1) {
+        this.question1 = question1;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestion2(String question2) {
+        this.question2 = question2;
+    }
+
+    public void setQuestion3(String question3) {
+        this.question3 = question3;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public String getQuestion1() {
+        return question1;
+    }
+
+    public String getQuestion2() {
+        return question2;
+    }
+
+    public String getQuestion3() {
+        return question3;
     }
 }
