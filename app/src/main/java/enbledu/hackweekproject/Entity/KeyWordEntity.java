@@ -6,8 +6,21 @@ package enbledu.hackweekproject.Entity;
 
 public class KeyWordEntity {
     String keyWord;
+    int keyWordNumber;
 
-    public KeyWordEntity(String keyWord) {
+    public KeyWordEntity(String keyWord, int keyWordNumber) {
+        this.keyWord = keyWord;
+        this.keyWordNumber = keyWordNumber;
+    }
+
+    public KeyWordEntity() {
+    }
+
+    public void setKeyWordNumber(int keyWordNumber) {
+        this.keyWordNumber = keyWordNumber;
+    }
+
+    public void setKeyWord(String keyWord) {
         this.keyWord = keyWord;
     }
 
@@ -15,7 +28,7 @@ public class KeyWordEntity {
         return keyWord;
     }
 
-    public void setKeyWord(String keyWord) {
-        this.keyWord = keyWord;
+    public int getKeyWordNumber() {
+        return keyWordNumber;
     }
 }

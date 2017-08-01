@@ -53,7 +53,7 @@ public class QuestionDAOImpl implements QuestionDAO {
         edit_values.put("question1", questionEntity.getQuestion1());
         edit_values.put("question2", questionEntity.getQuestion2());
         edit_values.put("question3", questionEntity.getQuestion3());
-        db.update("question_info", edit_values, "questionNumber = ?", (String[]) new Object[]{questionEntity.getQuestionNumber()});
+        db.update("question_info", edit_values, "questionNumber = ?",  new String[]{String.valueOf(questionEntity.getQuestionNumber())});
         db.close();
     }
 
@@ -64,7 +64,7 @@ public class QuestionDAOImpl implements QuestionDAO {
         /*Cursor cursor = db.rawQuery("select * from thread_info where url = ?",
                  new String[]{url});*/
         Cursor cursor;
-        cursor = db.query("note_info", null, null, null, null, null, null);
+        cursor = db.query("question_info", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
             QuestionEntity questionEntity = new QuestionEntity();
             questionEntity.setAnswer(cursor.getString(cursor.getColumnIndex("answer")));
@@ -86,7 +86,7 @@ public class QuestionDAOImpl implements QuestionDAO {
         /*Cursor cursor = db.rawQuery("select * from thread_info where url = ?",
                  new String[]{url});*/
         Cursor cursor;
-        cursor = db.query("note_info", null, null, null, null, null, null);
+        cursor = db.query("question_info", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
             num++;
         }

@@ -22,8 +22,9 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     @Override
     public void insertQuestion(KeyWordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
-        db.execSQL("insert into note_info(keyword) values(?............)",
-                new Object[]{keyWordEntity.getKeyWord()
+        db.execSQL("insert into keyword_info(keyWord,keyWordNumber) values(?,?)",
+                new Object[]{keyWordEntity.getKeyWord(),
+                            keyWordEntity.getKeyWordNumber()
                 });
         db.close();
     }
@@ -31,8 +32,8 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     @Override
     public void deleteQuestion(KeyWordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
-        db.execSQL("delete from note_info where keyword = ?",
-                new String[]{keyWordEntity.getKeyWord()});
+        db.execSQL("delete from note_info where keyWordNumber = ?",
+                new Integer[]{keyWordEntity.getKeyWordNumber()});
 
         db.close();
     }
@@ -41,8 +42,9 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     public void updateQuestion(KeyWordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues edit_values = new ContentValues();
-        edit_values.put("keyword", keyWordEntity.getKeyWord());
-        db.update("keyword_info", edit_values, "keyword = ?", new String[]{keyWordEntity.getKeyWord()});
+        edit_values.put("keyWord", keyWordEntity.getKeyWord());
+        edit_values.put("keyWordNumber", keyWordEntity.getKeyWordNumber());
+        db.update("keyword_info", edit_values, "keyWordNumber = ?", new String[]{String.valueOf(keyWordEntity.getKeyWordNumber())});
         db.close();
     }
 

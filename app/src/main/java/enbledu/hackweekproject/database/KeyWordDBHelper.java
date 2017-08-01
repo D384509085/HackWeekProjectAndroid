@@ -13,7 +13,8 @@ public class KeyWordDBHelper extends SQLiteOpenHelper{
     private static final String DB_NAME = "keyword.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table keyword_info(_id integer primary key autoincrement," +
-            "keyword text)";
+            "keyWord text" +
+            "keyWordNumber integer)";
     private static final String SQL_DROP = "drop table if exists keyword_info";
 
     public KeyWordDBHelper(Context context) {
