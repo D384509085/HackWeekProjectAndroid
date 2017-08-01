@@ -1,10 +1,12 @@
 package enbledu.hackweekproject.Entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/7/28 0028.
  */
 
-public class RobotEntity {
+public class RobotEntity implements Serializable{
 
 
     //qq号不在构造方法中获取，在传递给服务器数据后返回客户端额外设置

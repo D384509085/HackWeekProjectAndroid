@@ -1,10 +1,12 @@
 package enbledu.hackweekproject.Entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/7/28 0028.
  */
 
-public class QuestionEntity {
+public class QuestionEntity implements Serializable{
     private String answer;
     private String question1;
     private String question2;
