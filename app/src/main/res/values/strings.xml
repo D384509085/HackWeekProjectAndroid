@@ -6,4 +6,5 @@
     <string name="qq">QQ:</string>
     <string name="can_speak_auto">我能主动说话</string>
     <string name="can_not_speak_auto">我不能主动说话</string>
+    <string name="edit_robot_title">编辑我的机器人</string>
 </resources>

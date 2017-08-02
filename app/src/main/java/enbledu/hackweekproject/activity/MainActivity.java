@@ -1,6 +1,7 @@
 package enbledu.hackweekproject.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = MainActivity.this;
         initViewPage();
+        Intent intent = new Intent(MainActivity.this, EditActivity.class);
+        startActivity(intent);
     }
     public void showDialog(View view) {
         WheelViewDialog dialog = new WheelViewDialog(this);
