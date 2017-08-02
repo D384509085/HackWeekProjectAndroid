@@ -6,16 +6,16 @@ import java.io.Serializable;
  * Created by Administrator on 2017/7/30 0030.
  */
 
-public class KeyWordEntity implements Serializable{
+public class KeywordEntity implements Serializable{
     String keyWord;
     int keyWordNumber;
 
-    public KeyWordEntity(String keyWord, int keyWordNumber) {
+    public KeywordEntity(String keyWord, int keyWordNumber) {
         this.keyWord = keyWord;
         this.keyWordNumber = keyWordNumber;
     }
 
-    public KeyWordEntity() {
+    public KeywordEntity() {
     }
 
     public void setKeyWordNumber(int keyWordNumber) {

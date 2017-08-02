@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-import enbledu.hackweekproject.Entity.KeyWordEntity;
+import enbledu.hackweekproject.Entity.KeywordEntity;
 
 /**
  * Created by Administrator on 2017/7/30 0030.
@@ -20,7 +20,7 @@ public class KeyWordDAOImpl implements KeyWordDAO {
         mHelper = KeyWordDBHelper.getInstance(context);
     }
     @Override
-    public void insertQuestion(KeyWordEntity keyWordEntity) {
+    public void insertQuestion(KeywordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         db.execSQL("insert into keyword_info(keyWord,keyWordNumber) values(?,?)",
                 new Object[]{keyWordEntity.getKeyWord(),
@@ -30,7 +30,7 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     }
 
     @Override
-    public void deleteQuestion(KeyWordEntity keyWordEntity) {
+    public void deleteQuestion(KeywordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         db.execSQL("delete from note_info where keyWordNumber = ?",
                 new Integer[]{keyWordEntity.getKeyWordNumber()});
@@ -39,7 +39,7 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     }
 
     @Override
-    public void updateQuestion(KeyWordEntity keyWordEntity) {
+    public void updateQuestion(KeywordEntity keyWordEntity) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues edit_values = new ContentValues();
         edit_values.put("keyWord", keyWordEntity.getKeyWord());
@@ -49,7 +49,7 @@ public class KeyWordDAOImpl implements KeyWordDAO {
     }
 
     @Override
-    public ArrayList<KeyWordEntity> getKeyWord() {
+    public ArrayList<KeywordEntity> getKeyWord() {
         return null;
     }
 }

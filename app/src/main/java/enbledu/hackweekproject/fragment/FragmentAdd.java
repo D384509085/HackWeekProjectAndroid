@@ -25,8 +25,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import enbledu.hackweekproject.Entity.KeyWordEntity;
 import enbledu.hackweekproject.R;
+import enbledu.hackweekproject.bean.QuestionBean;
 
 import static javax.net.ssl.SSLEngineResult.Status.OK;
 
@@ -57,12 +57,12 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case  R.id.buttn: {
-                ArrayList<KeyWordEntity> list = new ArrayList<KeyWordEntity>();
-                list.add(new KeyWordEntity("第一个关键词",1));
-                list.add(new KeyWordEntity("第二个关键词",2));
+                ArrayList<QuestionBean> list = new ArrayList<QuestionBean>();
+                list.add(new QuestionBean("whos is handsome", "duenbo"));
+                list.add(new QuestionBean("who is the most handsome", "duenbo"));
                 Gson gson = new Gson();
-                String str = null;
-                for (KeyWordEntity keyWordEntity : list) {
+                String str = "";
+                for (QuestionBean keyWordEntity : list) {
                     str+=gson.toJson(keyWordEntity);
                     str+="#";
                 }
@@ -99,7 +99,7 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
             HttpURLConnection con = null;
             OutputStream out = null;
             try {
-                URL url = new URL("http://119.23.233.101:8080/xiaov-master/update?type=keyword");
+                URL url = new URL("http://119.23.233.101:8080/xiaov-master/update?type=question");
                 con = (HttpURLConnection) url.openConnection();
                 // 设置允许输出，默认为false
                 con.setDoOutput(true);
@@ -109,6 +109,7 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
                 con.setRequestMethod("POST");
                 out =con.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out));
+                Log.i("发送",str);
                 bw.write(str);//把json字符串写入缓冲区中
                 bw.flush();
                 // 向服务端写数据
