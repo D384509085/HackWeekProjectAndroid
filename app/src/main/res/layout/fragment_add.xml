@@ -8,26 +8,22 @@
         android:background="@mipmap/main_background"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttn"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
         <TextView
             android:text="@string/Theme"
             android:textColor="#575b5e"
             android:textSize="16dp"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical"
             android:background="@mipmap/card_background"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
             android:layout_width="334dp"
-            android:layout_height="473dp">
+            android:layout_height="453dp">
             <ImageView
                 android:background="@mipmap/dashu"
                 android:layout_width="310dp"
@@ -38,16 +34,47 @@
                 android:background="@mipmap/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/small_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/small_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/small_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/small_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:background="@mipmap/small_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
-
     </LinearLayout>
-    
+
     <TextView
         android:layout_marginTop="50dp"
+        android:textStyle="italic"
         android:layout_gravity="center_horizontal"
         android:text="@string/robot_name"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </FrameLayout>

@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             list.add(fragmentRobot);
         }
         FragmentAdd fragmentAdd = new FragmentAdd(mContext);
-
+        FragmentRobot fragmentRobot = new FragmentRobot(mContext,new RobotEntity());
 
         list.add(fragmentAdd);
-
+        list.add(fragmentRobot);
         /*list.add(fragmentTodoList);
         list.add(fragment2);*/
         /*mvViewPager = (ViewPager) findViewById(R.id.pager);*/
