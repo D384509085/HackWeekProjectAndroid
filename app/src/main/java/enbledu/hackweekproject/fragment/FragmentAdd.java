@@ -4,16 +4,22 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,9 +42,10 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_add, container, false);
-        /*Button btnTest = (Button) mView.findViewById(R.id.buttn);*/
-        /*btnTest.setOnClickListener(this);*/
+        Button btnTest = (Button) mView.findViewById(R.id.buttn);
+        btnTest.setOnClickListener(this);
         imageView = (ImageView) mView.findViewById(R.id.image);
+
         return mView;
     }
 
@@ -49,18 +56,25 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-           /* case  R.id.buttn: {
+            case  R.id.buttn: {
                 ArrayList<KeyWordEntity> list = new ArrayList<KeyWordEntity>();
                 list.add(new KeyWordEntity("第一个关键词",1));
                 list.add(new KeyWordEntity("第二个关键词",2));
+                Gson gson = new Gson();
+                String str = null;
+                for (KeyWordEntity keyWordEntity : list) {
+                    str+=gson.toJson(keyWordEntity);
+                    str+="#";
+                }
+                Log.i("a",str);
                 MyAsyncTask to = new MyAsyncTask();
-                to.execute(list);
-            }*/
+                to.execute(str);
+            }
         }
     }
 
 
-    class MyAsyncTask extends AsyncTask<ArrayList<KeyWordEntity>,Void,String> {
+    class MyAsyncTask extends AsyncTask<String,Void,String> {
 
 
 
@@ -78,12 +92,12 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
 
         //真正耗时操作
         @Override
-        protected String doInBackground(ArrayList<KeyWordEntity>... params) {
+        protected String doInBackground(String... params) {
             StringBuffer sb = new StringBuffer();
-            ArrayList<KeyWordEntity> p = params[0];
+            String str = params[0];
             BufferedReader reader = null;
             HttpURLConnection con = null;
-            ObjectOutputStream oos = null;
+            OutputStream out = null;
             try {
                 URL url = new URL("http://119.23.233.101:8080/xiaov-master/update?type=keyword");
                 con = (HttpURLConnection) url.openConnection();
@@ -93,10 +107,12 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
                 con.setReadTimeout(10 * 1000);
                 // 请求方式为POST请求
                 con.setRequestMethod("POST");
-
-                oos = new ObjectOutputStream(con.getOutputStream());
+                out =con.getOutputStream();
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out));
+                bw.write(str);//把json字符串写入缓冲区中
+                bw.flush();
                 // 向服务端写数据
-                oos.writeObject(p);
+
                 // 获得服务端的返回数据
                 InputStreamReader read = new InputStreamReader(
                         con.getInputStream());
@@ -113,13 +129,6 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
                 if (reader != null) {
                     try {
                         reader.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (oos != null) {
-                    try {
-                        oos.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -8,6 +8,10 @@
         android:background="@mipmap/main_background"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/buttn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
         <TextView
             android:text="@string/Theme"
             android:textColor="#575b5e"
