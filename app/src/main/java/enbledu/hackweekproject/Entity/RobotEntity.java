@@ -27,6 +27,7 @@ public class RobotEntity implements Serializable {
         this.name = name;
         this.character = character;
         this.stopSpeakingNum = stopSpeakingNum;
+        this.isOpen = isOpen;
         this.isSpeakAuto = isSpeakAoto;
     }
 

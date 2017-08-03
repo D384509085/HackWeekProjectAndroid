@@ -129,6 +129,7 @@ public class NewRobotActivity extends AppCompatActivity implements View.OnClickL
                     case "小孩":{
                         robotImage.setImageResource(R.mipmap.big_wawa);
                         robotEntity.setCharacter(0);
+                        break;
                     }
                 }
             }
