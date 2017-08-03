@@ -1,6 +1,7 @@
 package enbledu.hackweekproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import java.io.IOException;
 
 import enbledu.hackweekproject.R;
+import enbledu.hackweekproject.activity.NewRobotActivity;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -29,15 +31,15 @@ import static javax.net.ssl.SSLEngineResult.Status.OK;
 public class FragmentAdd extends Fragment implements View.OnClickListener{
     View mView;
     Context mContext;
-    ImageView imageView;
+    ImageView add_image;
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_add, container, false);
        /* Button btnTest = (Button) mView.findViewById(R.id.buttn);
         btnTest.setOnClickListener(this);*/
-        imageView = (ImageView) mView.findViewById(R.id.image);
-
+        add_image = (ImageView) mView.findViewById(R.id.new_robot_btn);
+        add_image.setOnClickListener(this);
         return mView;
     }
 
@@ -48,6 +50,10 @@ public class FragmentAdd extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.new_robot_btn: {
+                Intent intent = new Intent(mContext, NewRobotActivity.class);
+                startActivity(intent);
+            }
             /*case  R.id.buttn: {
                 ArrayList<QuestionBean> list = new ArrayList<QuestionBean>();
                 list.add(new QuestionBean("handsome duenbo",".."));

@@ -2,7 +2,7 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="530dp">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:background="@mipmap/main_background"
@@ -25,10 +25,11 @@
             android:layout_width="334dp"
             android:layout_height="453dp">
             <ImageView
-                android:background="@mipmap/dashu"
+                android:background="@mipmap/small_new"
                 android:layout_width="310dp"
                 android:layout_height="200dp" />
             <ImageView
+                android:id="@+id/new_robot_btn"
                 android:layout_marginTop="80dp"
                 android:layout_gravity="center"
                 android:background="@mipmap/add"
@@ -36,36 +37,7 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
-        <LinearLayout
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/small_circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/small_circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/small_circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/small_circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:background="@mipmap/small_circle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+
 
     </LinearLayout>
 

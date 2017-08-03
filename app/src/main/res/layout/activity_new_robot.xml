@@ -33,11 +33,11 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
-            android:text="@string/edit_robot_title"
+            android:text="@string/new_robot_title"
             android:textColor="#000000"
             android:textSize="20sp"
             android:visibility="visible"
-           />
+            />
 
     </LinearLayout>
 
@@ -52,8 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:background="#ffffff"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,11 +70,13 @@
                 android:textSize="12sp" />
 
             <EditText
+                android:id="@+id/new_robot_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
-                android:text="小唯"
+                android:hint="机器人名字"
                 android:textColor="@color/black"
+                android:textColorHint="@color/main_grey"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -103,11 +104,14 @@
                 android:textSize="12sp" />
 
             <EditText
+                android:id="@+id/new_robot_people_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="100"
+                android:hint="人数"
+                android:inputType="number"
                 android:textColor="@color/black"
+                android:textColorHint="@color/main_grey"
                 android:textSize="12sp" />
 
             <RelativeLayout
@@ -131,6 +135,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/new_robot_is_speadk_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -146,10 +151,12 @@
                 android:textColor="@color/main_grey"
                 android:textSize="12sp" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/is_speak_text"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginLeft="32dp"
+                android:text="是"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -174,6 +181,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/new_robot_keyword_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -210,6 +218,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/new_robot_question_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -244,9 +253,10 @@
             android:background="#66CCFF"
 
             />
+
     </LinearLayout>
     <Button
-        android:id="@+id/edit_robot_btn"
+        android:id="@+id/new_robot_sure_btn"
         android:background="@mipmap/sure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
