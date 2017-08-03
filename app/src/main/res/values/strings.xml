@@ -8,4 +8,9 @@
     <string name="can_not_speak_auto">我不能主动说话</string>
     <string name="edit_robot_title">编辑我的机器人</string>
     <string name="new_robot_title">添加新的机器人</string>
+    <string name="question_list_title">问题列表</string>
+    <string name="dialog_yes">是否删除？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="keyword_title">关键词列表</string>
 </resources>

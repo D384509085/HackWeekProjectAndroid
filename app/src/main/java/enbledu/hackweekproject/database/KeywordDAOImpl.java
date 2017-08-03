@@ -12,12 +12,12 @@ import enbledu.hackweekproject.Entity.KeywordEntity;
  * Created by Administrator on 2017/7/30 0030.
  */
 
-public class KeyWordDAOImpl implements KeyWordDAO {
+public class KeywordDAOImpl implements KeywordDAO {
 
-    private KeyWordDBHelper mHelper;
+    private KeywordDBHelper mHelper;
 
-    public KeyWordDAOImpl(Context context) {
-        mHelper = KeyWordDBHelper.getInstance(context);
+    public KeywordDAOImpl(Context context) {
+        mHelper = KeywordDBHelper.getInstance(context);
     }
     @Override
     public void insertQuestion(KeywordEntity keyWordEntity) {

@@ -41,6 +41,9 @@ public class QuestionRecycleViewAdapter extends RecyclerView.Adapter<QuestionRec
         return viewHolder;
     }
 
+    public void setListener(RecyclerItemClickListener.OnItemClickListener listener) {
+        mListener = listener;
+    }
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         QuestionEntity mQuestionEntity = questionDatas.get(position);

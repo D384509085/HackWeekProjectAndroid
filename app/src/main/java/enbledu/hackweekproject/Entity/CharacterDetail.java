@@ -10,6 +10,6 @@ public  class CharacterDetail {
     public static int CHARACTER_TULING = 0;
     //萌妹子
     public static int CHARACTER_BAIDU = 1;
-    //高冷男神
+    //大叔
     public static int CHARACTER_MOLI = 2;
 }

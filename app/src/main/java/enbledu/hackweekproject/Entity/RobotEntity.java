@@ -11,7 +11,7 @@ public class RobotEntity implements Serializable {
 
     //qq号不在构造方法中获取，在传递给服务器数据后返回客户端额外设置
     private String name;
-    private int qqID;
+    private long qqID;
     //性格常量在CharacterDetail里
     private int character;
     private int stopSpeakingNum;
@@ -22,7 +22,7 @@ public class RobotEntity implements Serializable {
 
     }
 
-    public RobotEntity(String name, int qqID, int character, int stopSpeakingNum, boolean isOpen, boolean isSpeakAoto) {
+    public RobotEntity(String name, long qqID, int character, int stopSpeakingNum, boolean isOpen, boolean isSpeakAoto) {
         this.qqID = qqID;
         this.name = name;
         this.character = character;
@@ -79,11 +79,23 @@ public class RobotEntity implements Serializable {
         this.stopSpeakingNum = stopSpeakingNum;
     }
 
-    public int getQqID() {
+    public long getQqID() {
         return qqID;
     }
 
-    public void setQqID(int qqID) {
+    public void setQqID(long qqID) {
         this.qqID = qqID;
+    }
+
+    @Override
+    public String toString() {
+        return "RobotEntity{" +
+                "name='" + name + '\'' +
+                ", qqID=" + qqID +
+                ", character=" + character +
+                ", stopSpeakingNum=" + stopSpeakingNum +
+                ", isOpen=" + isOpen +
+                ", isSpeakAuto=" + isSpeakAuto +
+                '}';
     }
 }

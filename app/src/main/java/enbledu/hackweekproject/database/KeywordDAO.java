@@ -8,7 +8,7 @@ import enbledu.hackweekproject.Entity.KeywordEntity;
  * Created by Administrator on 2017/7/30 0030.
  */
 
-public interface KeyWordDAO {
+public interface KeywordDAO {
     public void insertQuestion(KeywordEntity keyWordEntity);
 
     public void deleteQuestion(KeywordEntity keyWordEntity);

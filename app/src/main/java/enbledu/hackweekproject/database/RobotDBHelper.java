@@ -16,10 +16,10 @@ public class RobotDBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "robot.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table robot_info(_id integer primary key autoincrement," +
-            "name text" +
+            "name text," +
             "qqid integer," +
-            "character integer" +
-            "stopSpeakingNum integer" +
+            "character integer," +
+            "stopSpeakingNum integer," +
             "isSpeakingAuto integer)";
     private static final String SQL_DROP = "drop table if exists robot_info";
 

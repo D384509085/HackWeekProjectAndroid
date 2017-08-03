@@ -21,7 +21,9 @@
         <activity android:name=".activity.EditActivity" />
         <activity android:name=".activity.KeywordActivity" />
         <activity android:name=".activity.QuestionActivity" />
-        <activity android:name=".activity.NewRobotActivity"></activity>
+        <activity android:name=".activity.NewRobotActivity" />
+        <activity android:name=".activity.EditQuestionActivity" />
+        <activity android:name=".activity.EditKeywordActivity"></activity>
     </application>
 
 </manifest>

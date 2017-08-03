@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="530dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/main_background"
@@ -33,7 +34,7 @@
                 android:background="@mipmap/dashu" />
 
             <CheckBox
-                android:layout_width="45dp"
+                android:layout_width="46dp"
                 android:layout_height="15dp"
                 android:layout_marginTop="14dp"
                 android:button="@drawable/robot_checkbox"
@@ -69,6 +70,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
                <TextView
+                   android:id="@+id/robot_canspeak"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="50dp"
@@ -94,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/robot_keywourd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"

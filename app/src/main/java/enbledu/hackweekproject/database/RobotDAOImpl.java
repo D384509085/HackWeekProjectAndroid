@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,8 @@ public class RobotDAOImpl implements RobotDAO{
         } else {
             isSpeakAutoInt = 0;
         }
-        db.execSQL("insert into note_info(name,qqid,character,stopSpeakingNum,isSpeakingAuto) values(?,?,?)",
+        Log.i("insert", robotEntity.toString());
+        db.execSQL("insert into robot_info(name,qqid,character,stopSpeakingNum,isSpeakingAuto) values(?,?,?,?,?)",
                 new Object[]{robotEntity.getName(),
                         robotEntity.getQqID(),
                         robotEntity.getCharacter(),
@@ -81,6 +83,7 @@ public class RobotDAOImpl implements RobotDAO{
             robotEntity.setStopSpeakingNum(cursor.getInt(cursor.getColumnIndex("stopSpeakingNum")));
             robotEntity.setSpeakAuto(1 == cursor.getInt(cursor.getColumnIndex("isSpeakingAuto")));
             list.add(robotEntity);
+            Log.i("RObotDAOImp",robotEntity.toString());
         }
         cursor.close();
         db.close();

@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Administrator on 2017/7/30 0030.
  */
 
-public class KeyWordDBHelper extends SQLiteOpenHelper{
-    private static KeyWordDBHelper sHelper = null;
+public class KeywordDBHelper extends SQLiteOpenHelper{
+    private static KeywordDBHelper sHelper = null;
     private static final String DB_NAME = "keyword.db";
     private static final int VERSION = 1;
     private static final String SQL_CREATE = "create table keyword_info(_id integer primary key autoincrement," +
@@ -17,7 +17,7 @@ public class KeyWordDBHelper extends SQLiteOpenHelper{
             "keyWordNumber integer)";
     private static final String SQL_DROP = "drop table if exists keyword_info";
 
-    public KeyWordDBHelper(Context context) {
+    public KeywordDBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
     }
 
@@ -31,9 +31,9 @@ public class KeyWordDBHelper extends SQLiteOpenHelper{
         db.execSQL(SQL_DROP);
         db.execSQL(SQL_CREATE);
     }
-    public static KeyWordDBHelper getInstance(Context context) {
+    public static KeywordDBHelper getInstance(Context context) {
         if (sHelper == null) {
-            sHelper = new KeyWordDBHelper(context);
+            sHelper = new KeywordDBHelper(context);
         }
         return sHelper;
     }
